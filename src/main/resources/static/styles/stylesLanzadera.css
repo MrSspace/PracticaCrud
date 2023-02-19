@@ -11,7 +11,7 @@ h2{
     text-align: center;
 }
 
-.home-container{
+.home-container_table{
     display: grid;
-    grid-template-columns: 1fr 3fr
+    align-self: center; 
 }

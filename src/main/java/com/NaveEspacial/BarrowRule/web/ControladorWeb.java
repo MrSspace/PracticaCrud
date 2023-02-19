@@ -1,7 +1,6 @@
 package com.NaveEspacial.BarrowRule.web;
 
 import com.NaveEspacial.BarrowRule.dominio.Lanzadera;
-import com.NaveEspacial.BarrowRule.dominio.Nave;
 import com.NaveEspacial.BarrowRule.service.LanzaderaService;
 import java.util.List;
 import javax.validation.Valid;
@@ -25,9 +24,16 @@ public class ControladorWeb {
 
     @GetMapping("/lanzadera")
     public String visitarLanzadera(Model model) {
-      // List<Lanzadera> lanzaderas = lanzaderaService.listarLanzaderas();
-       //model.addAttribute("lanzaderas", lanzaderas);
+        List<Lanzadera> lanzaderas = lanzaderaService.listarLanzaderas();
+        model.addAttribute("lanzaderas", lanzaderas);
         return "lanzadera";
+    }
+    
+    @GetMapping("/formularioLanzadera")
+    public String visitarLanzadera() {
+      //List<Lanzadera> lanzaderas = lanzaderaService.listarLanzaderas();
+       //model.addAttribute("lanzaderas", lanzaderas);
+        return "formularioLanzadera";
     }
     
     @PostMapping("/guardarLanzadera")

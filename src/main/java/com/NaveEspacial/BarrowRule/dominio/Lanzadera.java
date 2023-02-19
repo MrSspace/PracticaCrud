@@ -17,6 +17,7 @@ public class Lanzadera extends Nave implements Serializable{
     private double altura;
     
     @NotEmpty
+    @Column(name = "vehiculo_a_lanzar")
     private String vehiculoALanzar;
     
     @NotEmpty

@@ -16,7 +16,7 @@ public class LanzaderaService implements ILanzaderaService{
     @Override
     @Transactional
     public List<Lanzadera> listarLanzaderas() {
-        return  (List<Lanzadera>) lanzaderaDAO.findAll();
+        return  (List<Lanzadera>) lanzaderaDAO.findAllNaves();
     }
 
     @Override
