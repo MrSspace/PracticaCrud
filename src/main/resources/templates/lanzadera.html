@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link th:href="@{/styles/stylesLanzadera.css}" rel="stylesheet" type="text/css"/>
+                </head>
+
+                <body>
+                    <h2>Naves Lanzadera</h2>
+
+                    <section class="home-container">
+                        <div>
+                            <form method="post" >
+                                <table>
+                                    <tr>
+                                        <th>Descripcion</th>
+                                        <th>Dato a Ingresar</th>
+                                    </tr>
+                                    <tr><input type="hidden" aquiVaElIdNave/></tr>
+                                    <tr>
+                                        <td>Nombre</td>
+                                        <td><input type="text"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Peso [ T ]</td>
+                                        <td><input type="number"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Energetico</td>
+                                        <td><input type="text"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Objetivo</td>
+                                        <td><input type="text"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ubicacion</td>
+                                        <td><input type="text"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Activo</td>
+                                        <td><input type="checkbox"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Averiado</td>
+                                        <td><input type="checkbox"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Altura [ m ]</td>
+                                        <td><input type="number"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vehiculo a lanzar</td>
+                                        <td><input type="text"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lanzado</td>
+                                        <td><input type="checkbox"/></td>
+                                    </tr>
+                                </table>
+                                <input type="submit" />
+                            </form>
+                        </div>
+
+                        <div th:if="${lanzaderas != null and !lanzaderas.empty}">
+                            <table border="1">
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Peso</th>
+                                    <th>Energetico</th>
+                                    <th>Objetivo</th>
+                                    <th>Ubicacion</th>
+                                    <th>Activo</th>
+                                    <th>Averiado</th>
+                                    <th>altura</th>
+                                    <th>vehiculo a Lanzar</th>
+                                    <th>lanzado</th>
+                                </tr>
+
+                                <tr th:each="lanzadera : ${lanzaderas}">
+                                    <td th:text="${nave.nombre}"></td>
+                                    <td th:text="${nave.peso}"></td>
+                                    <td th:text="${nave.energetico}"></td>
+                                    <td th:text="${nave.objetivo}"></td>
+                                    <td th:text="${nave.ubicacion}"></td>
+                                    <td th:text="${nave.activo}"></td>
+                                    <td th:text="${nave.averiado}"></td>
+                                    <td th:text="${lanzadera.altura}"></td>
+                                    <td th:text="${lanzadera.vehiculoALanzar}"></td>
+                                    <td th:text="${lanzadera.lanzado}"></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </section>
+
+                </body>
+
+                </html>

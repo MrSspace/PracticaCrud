@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Catalogo de Naves Espaciales</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link th:href="@{/styles/styles.css}" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        
+        <h1>CATALOGO DE NAVES ESPACIALES</h1>
+        
+        <section class="home-container">
+            
+            <div class="home-container-nave">
+                <h2>Naves Lanzadera</h2>
+                <img class="home-container-image" th:src="@{/images/lanzadera.png}" alt=""/></br>
+                <a th:href="@{/lanzadera}"><button>visitar</button></a>
+            </div>
+            
+            <div class="home-container-nave">
+                <h2>Naves Tripuladas</h2>
+                <img class="home-container-image" th:src="@{/images/tripulada.png}" alt=""/></br>
+                <a th:href="@{/tripulada}"><button>visitar</button></a>
+            </div>
+            
+            <div class="home-container-nave">
+                <h2>Sondas Espaciales</h2>
+                <img class="home-container-image" th:src="@{/images/sonda.png}" alt=""/></br>
+                <a th:href="@{/sonda}"><button>visitar</button></a>
+            </div>
+            
+            <div class="home-container-nave">
+                <h2>Naves De Suministros</h2>
+                <img class="home-container-image" th:src="@{/images/deSuministros.png}" alt=""/></br>
+                <a th:href="@{/deSuministro}"><button>visitar</button></a>
+            </div>
+            
+        </section>
+        
+        
+    </body>
+</html>

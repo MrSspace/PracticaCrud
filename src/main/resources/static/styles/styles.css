@@ -1,0 +1,34 @@
+* {
+    font-family: 'Roboto', 'sans-serif';
+}
+
+main{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+.home-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100px;
+    grid-gap: 10px;
+}
+
+.home-container-nave{
+    justify-self: center;
+    justify-content: center;
+}
+
+.home-container-image{
+    width: 100%;
+    object-fit: contain;
+    max-height: 300px;
+}
