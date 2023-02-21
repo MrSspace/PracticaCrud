@@ -6,6 +6,6 @@ public interface INave {
     
     public abstract String Activar();
     
-    public abstract void mover();
+    public abstract String mover();
     
 }

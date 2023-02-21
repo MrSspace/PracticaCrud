@@ -63,4 +63,12 @@ public class ControladorWeb {
         return "./lanzadera/detallesLanzadera";
     }
     
+    @GetMapping("/repararLanzadera/{idNave}")
+    public String repararLanzadera(Lanzadera lanzadera, Model model) {
+        lanzadera = lanzaderaService.encontrarLanzadera(lanzadera);
+        lanzadera.reparar();
+        lanzaderaService.guardar(lanzadera);
+        return "redirect:/";
+    }
+    
 }

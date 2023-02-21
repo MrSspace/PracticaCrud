@@ -14,9 +14,11 @@
                         <h2>Detalles : Nave Lanzadera</h2>
 
                         <div>
-                            <form th:object="${lanzadera}">
-                                <input type="hidden" name="idNave" th:field="*{idNave}"/>
                                 <table>
+                                    <tr>
+                                        <td><label for="id">ID</label></td>
+                                        <td><p th:text=${lanzadera.idNave}></p></td>
+                                    </tr>
                                     <tr>
                                         <td><label for="nombre">Nombre</label></td>
                                         <td><p th:text=${lanzadera.nombre}></p></td>
@@ -58,7 +60,7 @@
                                         <td><p th:text="${lanzadera.lanzado}"></p></td>
                                     </tr>
                                 </table>
-                            </form>
+                                <a th:href="@{/repararLanzadera/} + ${lanzadera.idNave}"><button>Reparar</button></a>
                         </div>
 
                     </section>

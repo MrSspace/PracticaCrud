@@ -26,7 +26,7 @@ public class Sonda extends Nave implements Serializable{
     }
 
     @Override
-    public void mover() {
+    public String mover() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

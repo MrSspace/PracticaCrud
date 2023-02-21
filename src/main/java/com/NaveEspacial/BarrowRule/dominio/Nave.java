@@ -48,6 +48,11 @@ private boolean averiado;
 
     
     @Override
-    public void reparar(){}
+    public void reparar(){
+        if (this.averiado) {
+            this.averiado = false;
+            System.out.println("Se reparo la nave con id = " + this.idNave);
+        }
+    }
     
 }
