@@ -16,7 +16,7 @@ public class LanzaderaService implements ILanzaderaService{
     @Override
     @Transactional
     public List<Lanzadera> listarLanzaderas() {
-        return  (List<Lanzadera>) lanzaderaDAO.findAllNaves();
+        return  (List<Lanzadera>) lanzaderaDAO.findAllLanzaderas();
     }
 
     @Override
@@ -28,13 +28,14 @@ public class LanzaderaService implements ILanzaderaService{
     @Override
     @Transactional
     public void eliminar(Lanzadera lanzadera) {
+        System.out.println("Se ha borrado la lanzadera con id = " + lanzadera.getIdNave());
         lanzaderaDAO.delete(lanzadera);
     }
 
     @Override
     @Transactional(readOnly = true)
     public Lanzadera encontrarLanzadera(Lanzadera lanzadera) {
-        return lanzaderaDAO.findById(lanzadera.getIdNave()).orElse(null); //modiificar metodo para buscar por cualquier parametro
+        return lanzaderaDAO.findById(lanzadera.getIdNave()).orElse(null);
     }
     
 }

@@ -14,6 +14,7 @@ public class Lanzadera extends Nave implements Serializable{
     private static final long serialVersionUID = 1L;
     
     @NotEmpty
+    @Column(name = "altura")
     private double altura;
     
     @NotEmpty
@@ -21,6 +22,7 @@ public class Lanzadera extends Nave implements Serializable{
     private String vehiculoALanzar;
     
     @NotEmpty
+    @Column(name = "lanzado")
     private boolean lanzado;
     
     

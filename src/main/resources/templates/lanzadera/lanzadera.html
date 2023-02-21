@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <head>
-        <title>TODO supply a title</title>
+        <title>Naves Lanzadera</title>
         <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <link th:href="@{/styles/stylesLanzadera.css}" rel="stylesheet" type="text/css"/>
@@ -13,23 +13,28 @@
                     <h2>Naves Lanzadera</h2>
 
                     <section>
-
+                        
                         <div class="home-container_table" th:if="${lanzaderas != null and !lanzaderas.empty}">
                             <table border="1">
                                 <tr>
+                                    <th>Id</th>
                                     <th>Nombre</th>
-                                    <th>Peso</th>
+                                    <th>Peso [ T ]</th>
                                     <th>Energetico</th>
                                     <th>Objetivo</th>
                                     <th>Ubicacion</th>
                                     <th>Activo</th>
                                     <th>Averiado</th>
-                                    <th>altura</th>
-                                    <th>vehiculo a Lanzar</th>
-                                    <th>lanzado</th>
+                                    <th>Altura [ m ]</th>
+                                    <th>Vehiculo a Lanzar</th>
+                                    <th>Lanzado</th>
+                                    <th>Modificar</th>
+                                    <th>Ver</th>
+                                    <th>Eliminar</th>
                                 </tr>
 
                                 <tr th:each="lanzadera : ${lanzaderas}">
+                                    <td th:text="${lanzadera.idNave}"></td>
                                     <td th:text="${lanzadera.nombre}"></td>
                                     <td th:text="${lanzadera.peso}"></td>
                                     <td th:text="${lanzadera.energetico}"></td>
@@ -40,6 +45,15 @@
                                     <td th:text="${lanzadera.altura}"></td>
                                     <td th:text="${lanzadera.vehiculoALanzar}"></td>
                                     <td th:text="${lanzadera.lanzado}"></td>
+                                    <td>
+                                        <a th:href="@{/editarLanzadera/} + ${lanzadera.idNave}"><button>Editar</button></a>
+                                    </td>
+                                    <td>
+                                        <a th:href="@{/detallesLanzadera/} + ${lanzadera.idNave}"><button>visitar</button></a>
+                                    </td>
+                                    <td>
+                                        <a th:href="@{/eliminarLanzadera(idNave=${lanzadera.idNave})}"><button>eliminar</button></a>
+                                    </td>
                                 </tr>
                             </table>
                         </div>

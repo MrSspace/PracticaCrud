@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Detalles de la lanzadera</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <section>
+
+                        <h2>Detalles : Nave Lanzadera</h2>
+
+                        <div>
+                            <form th:object="${lanzadera}">
+                                <input type="hidden" name="idNave" th:field="*{idNave}"/>
+                                <table>
+                                    <tr>
+                                        <td><label for="nombre">Nombre</label></td>
+                                        <td><p th:text=${lanzadera.nombre}></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="peso">Peso [ Kg ]</label></td>
+                                        <td><p th:text="${lanzadera.peso}"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="energetico">Energetico</label></td>
+                                        <td><p th:text="${lanzadera.energetico}"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="objetivo">Objetivo</label></td>
+                                        <td><p th:text="${lanzadera.objetivo}"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="ubicacion">Ubicacion</label></td>
+                                        <td><p th:text="${lanzadera.ubicacion}"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="activo">Activo</label></td>
+                                        <td><p th:text="${lanzadera.activo}"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="averiado">Averiado</label></td>
+                                        <td><p th:text="${lanzadera.averiado}"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="altura">Altura [ m ]</label></td>
+                                        <td><p th:text="${lanzadera.altura}"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="vehiculo_a_lanzar">Vehiculo a lanzar</label></td>
+                                        <td><p th:text="${lanzadera.vehiculoALanzar}"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="lanzado"> Lanzado</label></td>
+                                        <td><p th:text="${lanzadera.lanzado}"></p></td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+
+                    </section>
+        
+    </body>
+</html>

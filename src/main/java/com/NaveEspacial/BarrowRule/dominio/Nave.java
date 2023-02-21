@@ -15,27 +15,35 @@ public abstract class Nave implements INave, Serializable {
     
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Column(name = "id_nave")
 private int idNave;
 
 @NotEmpty
+@Column(name = "nombre")
 private String nombre;
 
 @NotEmpty
+@Column(name = "peso")
 private double peso;
 
 @NotEmpty
+@Column(name = "energetico")
 private String energetico;
 
 @NotEmpty
+@Column(name = "objetivo")
 private String objetivo;
 
 @NotEmpty
+@Column(name = "ubicacion")
 private String ubicacion;
 
 @NotEmpty
+@Column(name = "activo")
 private boolean activo;
 
 @NotEmpty
+@Column(name = "averiado")
 private boolean averiado;
 
     

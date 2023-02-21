@@ -11,6 +11,6 @@ public interface ILanzaderaDAO extends JpaRepository<Lanzadera, Integer>{
     
     @Query(value = "SELECT * FROM nave INNER JOIN lanzadera ON nave.id_nave = lanzadera.id_nave",
             nativeQuery=true)
-    public List<Lanzadera> findAllNaves();
+    public List<Lanzadera> findAllLanzaderas();
 
 }

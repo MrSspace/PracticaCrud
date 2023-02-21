@@ -23,25 +23,44 @@ public class ControladorWeb {
     }
 
     @GetMapping("/lanzadera")
-    public String visitarLanzadera(Model model) {
+    public String mostrarLanzaderas(Model model) {
         List<Lanzadera> lanzaderas = lanzaderaService.listarLanzaderas();
         model.addAttribute("lanzaderas", lanzaderas);
-        return "lanzadera";
+        return "./lanzadera/lanzadera";
     }
     
     @GetMapping("/formularioLanzadera")
-    public String visitarLanzadera() {
-      //List<Lanzadera> lanzaderas = lanzaderaService.listarLanzaderas();
-       //model.addAttribute("lanzaderas", lanzaderas);
-        return "formularioLanzadera";
+    public String formularioLanzadera(Lanzadera lanzadera) {
+        return "./lanzadera/formularioLanzadera";
     }
     
     @PostMapping("/guardarLanzadera")
     public String guardarLanzadera(@Valid Lanzadera lanzadera, Errors error){
         if (error.hasErrors()) {
-            return "lanzadera"; //FormularioLanzadera
+            return "./lanzadera/formularioLanzadera";
         }
-        return "redirect:/lanzadera";
+        lanzaderaService.guardar(lanzadera);
+        return "redirect:/";
+    }
+    
+    @GetMapping("/editarLanzadera/{idNave}")
+    public String editarLanzadera(Lanzadera lanzadera, Model model) {
+        lanzadera = lanzaderaService.encontrarLanzadera(lanzadera);
+        model.addAttribute("lanzadera", lanzadera);
+        return "./lanzadera/formularioLanzadera";
+    }
+    
+    @GetMapping("/eliminarLanzadera")
+    public String eliminarLanzadera(Lanzadera lanzadera, Model model) {
+        lanzaderaService.eliminar(lanzadera);
+        return "redirect:/";
+    }
+    
+    @GetMapping("/detallesLanzadera/{idNave}")
+    public String detallesLanzadera(Lanzadera lanzadera, Model model) {
+        lanzadera = lanzaderaService.encontrarLanzadera(lanzadera);
+        model.addAttribute("lanzadera", lanzadera);
+        return "./lanzadera/detallesLanzadera";
     }
     
 }
