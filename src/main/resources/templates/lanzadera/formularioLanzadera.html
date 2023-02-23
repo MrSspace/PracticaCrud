@@ -6,14 +6,14 @@
         <title>Formulario : Naves Lanzadera</title>
         <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link th:href="@{/styles/stylesFormulario.css}" rel="stylesheet" type="text/css"/>
                 </head>
                 <body>
-
+                    <header th:replace="layout/plantilla :: header"/>
+                    <h2>Formulario : Naves Lanzadera</h2>
                     <section>
 
-                        <h2>Formulario : Naves Lanzadera</h2>
-
-                        <div>
+                        <div class="main_section">
                             <form th:action="@{/guardarLanzadera}" method="POST" th:object="${lanzadera}">
                                 <table>
                                     <tr>
@@ -108,12 +108,17 @@
                                             <input type="checkbox" name="lanzado" th:field="*{lanzado}"/>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="submit" name="guardarLanzadera" th:value="Guardar"/>
+                                        </td>
+                                        <td></td>
+                                    </tr>
                                 </table>
-                                <input type="submit" name="guardarLanzadera" th:value="Guardar"/>
                             </form>
                         </div>
 
                     </section>
-
+                    
                 </body>
                 </html>

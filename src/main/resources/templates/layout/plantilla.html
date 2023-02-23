@@ -9,7 +9,19 @@
     </head>
     <body>
         
+        <header th:fragment="header">
+            <a th:href="@{/}"> | Inicio | </a>  <a th:href="@{/lanzadera}"> | Lanzaderas | </a>  
+            <a th:href="@{/tripulada}"> | Tripulada | </a>  <a th:href="@{/sonda}"> | Sonda | </a>  
+            <a th:href="@{/deSuministros}"> | De Suministros | </a>
+        </header>
         
+        <footer th:fragment="footer">
+            <div>
+                <p>
+                    Barrow Rule : Una Clasificacion de las naves espaciales.
+                </p>
+            </div>
+        </footer>
         
     </body>
 </html>

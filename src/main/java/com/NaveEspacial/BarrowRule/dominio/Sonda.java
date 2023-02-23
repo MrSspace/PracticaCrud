@@ -21,7 +21,7 @@ public class Sonda extends Nave implements Serializable{
     
     
     @Override
-    public String Activar() {
+    public String activar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -29,5 +29,10 @@ public class Sonda extends Nave implements Serializable{
     public String mover() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    @Override
+    public void reiniciarMision(){
+    
+    };
     
 }

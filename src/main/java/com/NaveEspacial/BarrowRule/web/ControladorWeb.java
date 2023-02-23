@@ -35,12 +35,13 @@ public class ControladorWeb {
     }
     
     @PostMapping("/guardarLanzadera")
-    public String guardarLanzadera(@Valid Lanzadera lanzadera, Errors error){
+    public String guardarLanzadera(@Valid Lanzadera lanzadera, Model model, Errors error){
         if (error.hasErrors()) {
             return "./lanzadera/formularioLanzadera";
         }
         lanzaderaService.guardar(lanzadera);
-        return "redirect:/";
+        model.addAttribute("lanzadera", lanzadera);
+        return "./lanzadera/detallesLanzadera";
     }
     
     @GetMapping("/editarLanzadera/{idNave}")
@@ -53,7 +54,8 @@ public class ControladorWeb {
     @GetMapping("/eliminarLanzadera")
     public String eliminarLanzadera(Lanzadera lanzadera, Model model) {
         lanzaderaService.eliminar(lanzadera);
-        return "redirect:/";
+        mostrarLanzaderas(model);
+        return mostrarLanzaderas(model);
     }
     
     @GetMapping("/detallesLanzadera/{idNave}")
@@ -67,8 +69,43 @@ public class ControladorWeb {
     public String repararLanzadera(Lanzadera lanzadera, Model model) {
         lanzadera = lanzaderaService.encontrarLanzadera(lanzadera);
         lanzadera.reparar();
+        String reparacion = "La nave " + lanzadera.getNombre() + " se ha reparado exitosamente";
         lanzaderaService.guardar(lanzadera);
-        return "redirect:/";
+        model.addAttribute("reparar", reparacion);
+        model.addAttribute("lanzadera", lanzadera);
+        return "./lanzadera/detallesLanzadera";
+    }
+    
+    @GetMapping("activarLanzadera/{idNave}")
+    public String activarLanzadera(Lanzadera lanzadera, Model model){
+        lanzadera = lanzaderaService.encontrarLanzadera(lanzadera);
+        String activar = lanzadera.activar();
+        lanzaderaService.guardar(lanzadera);
+        model.addAttribute("activar", activar);
+        model.addAttribute("lanzadera", lanzadera);
+        return "./lanzadera/detallesLanzadera";
+    }
+    
+    @GetMapping("moverLanzadera/{idNave}")
+    public String moverLanzadera(Lanzadera lanzadera, Model model){
+        lanzadera = lanzaderaService.encontrarLanzadera(lanzadera);
+        String mover = lanzadera.mover();
+        lanzaderaService.guardar(lanzadera);
+        model.addAttribute("mover", mover);
+        model.addAttribute("lanzadera", lanzadera);
+        return "./lanzadera/detallesLanzadera";
+    }
+    
+    @GetMapping("reiniciarLanzadera/{idNave}")
+    public String reiniciarLanzadera(Lanzadera lanzadera, Model model){
+        lanzadera = lanzaderaService.encontrarLanzadera(lanzadera);
+        lanzadera.reiniciarMision();
+        String reinicio = "La nave " + lanzadera.getNombre() + " se ha recuperado exitosamente. Recuerda usar el metodo"
+                + " Reparar luego de reiniciar la mision ya que en ocasiones la nave puede sufrir averias";
+        lanzaderaService.guardar(lanzadera);
+        model.addAttribute("reparar", reinicio);
+        model.addAttribute("lanzadera", lanzadera);
+        return "./lanzadera/detallesLanzadera";
     }
     
 }

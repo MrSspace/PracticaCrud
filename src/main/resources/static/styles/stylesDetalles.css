@@ -1,0 +1,86 @@
+* {
+    font-family: 'Roboto', 'sans-serif';
+}
+
+main{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2{
+    text-align: center;
+}
+
+.main_section{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 600px;
+}
+
+.main_section .main_section_rigth_up{
+    display: grid;
+    grid-template-rows: 30px 120px;
+    margin-right: auto;
+    width: 75%;
+    background: #F0FBFF;
+}
+
+.main_section .main_section_rigth_mid{
+    display: grid;
+    grid-template-rows: 30px 120px;
+    margin-right: auto;
+    width: 75%;
+    background: #FDF4FF;
+}
+
+.main_section .main_section_rigth_down{
+    display: grid;
+    grid-template-rows: 30px 120px;
+    margin-right: auto;
+    width: 75%;
+    background: #F0FBFF;
+}
+
+.main_section div {
+    padding: 1rem;
+    align-content: center;
+}
+
+.main_section div table{
+    margin-left: auto;
+    width: 75%;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-collapse: collapse; 
+}
+
+.main_section div table tr{
+    height: auto;
+}
+
+.main_section div table th{
+    height: auto;
+    padding: 1rem;
+    text-align: left;
+}
+
+.main_section div table td {
+   text-align: left;
+   vertical-align: central;
+   border-top: 1px solid black;
+   border-bottom: 1px solid black;
+   padding: 0.5rem;
+}
+
+table tr th{
+    background-color: #562561;
+    color: #FDF4FF;
+}
+
+table tr:nth-child(odd) td{
+    background-color: #FDF4FF;
+}
+
+table tr:nth-child(even) td{
+    background-color: #F0FBFF;
+}

@@ -6,16 +6,17 @@
         <title>Naves Lanzadera</title>
         <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <link th:href="@{/styles/stylesLanzadera.css}" rel="stylesheet" type="text/css"/>
+                <link th:href="@{/styles/stylesNaves.css}" rel="stylesheet" type="text/css"/>
                 </head>
 
                 <body>
+                    <header th:replace="layout/plantilla :: header"/>
                     <h2>Naves Lanzadera</h2>
 
                     <section>
                         
                         <div class="home-container_table" th:if="${lanzaderas != null and !lanzaderas.empty}">
-                            <table border="1">
+                            <table>
                                 <tr>
                                     <th>Id</th>
                                     <th>Nombre</th>
@@ -28,8 +29,8 @@
                                     <th>Altura [ m ]</th>
                                     <th>Vehiculo a Lanzar</th>
                                     <th>Lanzado</th>
+                                    <th>Visitar</th>
                                     <th>Modificar</th>
-                                    <th>Ver</th>
                                     <th>Eliminar</th>
                                 </tr>
 
@@ -46,18 +47,20 @@
                                     <td th:text="${lanzadera.vehiculoALanzar}"></td>
                                     <td th:text="${lanzadera.lanzado}"></td>
                                     <td>
-                                        <a th:href="@{/editarLanzadera/} + ${lanzadera.idNave}"><button>Editar</button></a>
-                                    </td>
-                                    <td>
                                         <a th:href="@{/detallesLanzadera/} + ${lanzadera.idNave}"><button>visitar</button></a>
                                     </td>
                                     <td>
-                                        <a th:href="@{/eliminarLanzadera(idNave=${lanzadera.idNave})}"><button>eliminar</button></a>
+                                        <a th:href="@{/editarLanzadera/} + ${lanzadera.idNave}"><button>Editar</button></a>
+                                    </td>
+                                    <td>
+                                        <a th:href="@{/eliminarLanzadera(idNave=${lanzadera.idNave})}"><button>Eliminar</button></a>
                                     </td>
                                 </tr>
                             </table>
                         </div>
-
+                        <div class="add-button">
+                            <a th:href="@{/formularioLanzadera}"><button>Agregar</button></a>
+                        </div>
                     </section>
 
                 </body>
