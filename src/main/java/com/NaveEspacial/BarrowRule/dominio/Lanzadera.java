@@ -35,6 +35,7 @@ public class Lanzadera extends Nave implements Serializable{
             respuesta = "Comenzando secuencia de activacion de la lanzadera " + this.getNombre() + " con destino a " + this.getObjetivo()
                 + ". 10... 9... 8... 7... 6... 5... 4... 3... 2... 1... despegue!!... '(Activa nuevamente para continuar o utiliza el metodo mover"
                     + " para ganar un mayor impulso)'";
+            this.setUbicacion("Espacio Exterior");
         } else if ( !this.lanzado ) {
             this.lanzado = true;
             respuesta = "Estado de la mision: " + this.getNombre() + " se encuentra: activa..."
@@ -69,6 +70,7 @@ public class Lanzadera extends Nave implements Serializable{
         this.setActivo(false);
         this.setAveriado(siONoAleatorio());
         this.setLanzado(false);
+        this.setUbicacion("Centro Espacial");
     };
     
 }

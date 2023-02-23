@@ -28,7 +28,7 @@ public class TripuladaService implements ITripuladaService{
     @Override
     @Transactional
     public void eliminar(Tripulada tripulada) {
-        System.out.println("Se ha borrado la lanzadera con id = " + tripulada.getIdNave());
+        System.out.println("Se ha borrado la tripulada con id = " + tripulada.getIdNave());
         tripuladaDAO.delete(tripulada);
     }
 

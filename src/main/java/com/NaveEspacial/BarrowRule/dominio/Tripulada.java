@@ -27,6 +27,7 @@ public class Tripulada extends Nave implements Serializable{
             respuesta = "Comenzando secuencia de activacion... Separando la nave. La " + this.getNombre() +
                     " Se encunetra desplegada para continuar con la mision: " + this.getObjetivo() + 
                     " '(Para continuar utiliza los metodos Mover o Activar)'";
+            this.setUbicacion("Espacio Exterior");
         } else if ( this.isActivo() && !this.isAveriado() ){
                 respuesta = "El equipo de la " + this.getNombre() + " cuenta con " + this.getTripulantes() + " tripulantes"
                     + " los cuales se encuentran enfocados en la mision: " + this.getObjetivo() +
@@ -58,6 +59,7 @@ public class Tripulada extends Nave implements Serializable{
     public void reiniciarMision(){
         this.setActivo(false);
         this.setAveriado(siONoAleatorio());
+        this.setUbicacion("Centro Espacial");
     };
     
 }

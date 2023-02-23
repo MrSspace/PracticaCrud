@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Detalles de la Sonda</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link th:href="@{/styles/stylesDetalles.css}" rel="stylesheet" type="text/css"/>
+                </head>
+                <body>
+                    <header th:replace="layout/plantilla :: header"/>
+
+                    <h2>Detalles : Naves Sonda</h2>
+
+                    <section class="main_section">
+
+                        <div>
+                            <table>
+                                <tr>
+                                    <th>Valor</th>
+                                    <th>Descripcion</th>
+                                </tr>
+                                <tr>
+                                    <td><label for="id">ID</label></td>
+                                    <td th:text=${sonda.idNave}></p></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="nombre">Nombre</label></td>
+                                    <td th:text=${sonda.nombre}></p></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="peso">Peso [ T ]</label></td>
+                                    <td th:text="${sonda.peso}"></p></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="energetico">Energetico</label></td>
+                                    <td><p th:text="${sonda.energetico}"></p></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="objetivo">Objetivo</label></td>
+                                    <td th:text="${sonda.objetivo}"></p></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="ubicacion">Ubicacion</label></td>
+                                    <td th:text="${sonda.ubicacion}"></p></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="activo">Activo</label></td>
+                                    <td th:text="${sonda.activo}"></p></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="averiado">Averiado</label></td>
+                                    <td th:text="${sonda.averiado}"></p></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="destino">Destino</label></td>
+                                    <td th:text="${sonda.destino}"></p></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="transmitiendo">Transmitiendo</label></td>
+                                    <td th:text="${sonda.transmitiendo}"></p></td>
+                                </tr>
+                                <tr>
+                                    <td><p><strong>Metodos de la nave</strong></p></td>
+                                    <td>
+                                    <a th:href="@{/repararSonda/} + ${sonda.idNave}"><button>Reparar</button></a>
+                                    <a th:href="@{/activarSonda/} + ${sonda.idNave}"><button>Activar</button></a>
+                                    <a th:href="@{/moverSonda/} + ${sonda.idNave}"><button>Mover</button></a>
+                                    <a th:href="@{/reiniciarSonda/} + ${sonda.idNave}"><button>Reiniciar</button></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><strong>Editar o Eliminar Tripulada</strong>
+                                    </td>
+                                    <td>
+                                        <a th:href="@{/editarSonda/} + ${sonda.idNave}"><button>Editar</button></a>
+                                        <a th:href="@{/eliminarSonda(idNave=${sonda.idNave})}"><button>Eliminar</button></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div>
+                            <div class="main_section_rigth_up">
+                                <strong>Resultado del metodo ACTIVAR</strong>
+                                <p th:text="${activar}"></p>
+                            </div>
+                            <div class="main_section_rigth_mid">
+                                <strong>Resultado del metodo MOVER</strong>
+                                <p th:text="${mover}"></p>
+                            </div>
+                            <div class="main_section_rigth_down">
+                                <strong>Resultado de los metodos REINICIAR y REPARAR</strong>
+                                <p th:text="${reparar}"></p>
+                                <p th:text="${reiniciar}"></p>
+                            </div>
+                        </div>
+
+                    </section>
+
+                </body>
+                </html>
+
