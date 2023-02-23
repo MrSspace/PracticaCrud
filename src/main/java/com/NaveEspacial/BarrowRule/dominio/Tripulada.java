@@ -14,17 +14,18 @@ public class Tripulada extends Nave implements Serializable{
     private static final long serialVersionUID = 1L;
     
     @NotEmpty
+    @Column(name = "tripulantes")
     private int tripulantes;
     
     
     @Override
     public String activar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "EN CONSTRUCCION";
     }
 
     @Override
     public String mover() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "EN CONSTRUCCION";
     }
     
     @Override

@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <head>
-        <title>Detalles de la lanzadera</title>
+        <title>Detalles de la Tripuladas</title>
         <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <link th:href="@{/styles/stylesDetalles.css}" rel="stylesheet" type="text/css"/>
@@ -11,7 +11,7 @@
                 <body>
                     <header th:replace="layout/plantilla :: header"/>
 
-                    <h2>Detalles : Nave Lanzadera</h2>
+                    <h2>Detalles : Naves Tripuladas</h2>
 
                     <section class="main_section">
 
@@ -23,64 +23,56 @@
                                 </tr>
                                 <tr>
                                     <td><label for="id">ID</label></td>
-                                    <td th:text=${lanzadera.idNave}></p></td>
+                                    <td th:text=${tripulada.idNave}></p></td>
                                 </tr>
                                 <tr>
                                     <td><label for="nombre">Nombre</label></td>
-                                    <td th:text=${lanzadera.nombre}></p></td>
+                                    <td th:text=${tripulada.nombre}></p></td>
                                 </tr>
                                 <tr>
                                     <td><label for="peso">Peso [ T ]</label></td>
-                                    <td th:text="${lanzadera.peso}"></p></td>
+                                    <td th:text="${tripulada.peso}"></p></td>
                                 </tr>
                                 <tr>
                                     <td><label for="energetico">Energetico</label></td>
-                                    <td><p th:text="${lanzadera.energetico}"></p></td>
+                                    <td><p th:text="${tripulada.energetico}"></p></td>
                                 </tr>
                                 <tr>
                                     <td><label for="objetivo">Objetivo</label></td>
-                                    <td th:text="${lanzadera.objetivo}"></p></td>
+                                    <td th:text="${tripulada.objetivo}"></p></td>
                                 </tr>
                                 <tr>
                                     <td><label for="ubicacion">Ubicacion</label></td>
-                                    <td th:text="${lanzadera.ubicacion}"></p></td>
+                                    <td th:text="${tripulada.ubicacion}"></p></td>
                                 </tr>
                                 <tr>
                                     <td><label for="activo">Activo</label></td>
-                                    <td th:text="${lanzadera.activo}"></p></td>
+                                    <td th:text="${tripulada.activo}"></p></td>
                                 </tr>
                                 <tr>
                                     <td><label for="averiado">Averiado</label></td>
-                                    <td th:text="${lanzadera.averiado}"></p></td>
+                                    <td th:text="${tripulada.averiado}"></p></td>
                                 </tr>
                                 <tr>
-                                    <td><label for="altura">Altura [ m ]</label></td>
-                                    <td th:text="${lanzadera.altura}"></p></td>
-                                </tr>
-                                <tr>
-                                    <td><label for="vehiculo_a_lanzar">Vehiculo a lanzar</label></td>
-                                    <td th:text="${lanzadera.vehiculoALanzar}"></p></td>
-                                </tr>
-                                <tr>
-                                    <td><label for="lanzado"> Lanzado</label></td>
-                                    <td th:text="${lanzadera.lanzado}"></p></td>
+                                    <td><label for="tripulantes">Altura [ # ]</label></td>
+                                    <td th:text="${tripulada.tripulantes}"></p></td>
                                 </tr>
                                 <tr>
                                     <td><p><strong>Metodos de la nave</strong></p></td>
                                     <td>
-                                    <a th:href="@{/repararLanzadera/} + ${lanzadera.idNave}"><button>Reparar</button></a>
-                                    <a th:href="@{/activarLanzadera/} + ${lanzadera.idNave}"><button>Activar</button></a>
-                                    <a th:href="@{/moverLanzadera/} + ${lanzadera.idNave}"><button>Mover</button></a>
-                                    <a th:href="@{/reiniciarLanzadera/} + ${lanzadera.idNave}"><button>Reiniciar</button></a>
+                                    <a th:href="@{/repararTripulada/} + ${tripulada.idNave}"><button>Reparar</button></a>
+                                    <a th:href="@{/activarTripulada/} + ${tripulada.idNave}"><button>Activar</button></a>
+                                    <a th:href="@{/moverTripulada/} + ${tripulada.idNave}"><button>Mover</button></a>
+                                    <a th:href="@{/reiniciarTripulada/} + ${tripulada.idNave}"><button>Reiniciar</button></a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <p><strong>Editar o Eliminar Lanzadera</strong>
+                                        <p><strong>Editar o Eliminar Tripulada</strong>
                                     </td>
                                     <td>
-                                        <a th:href="@{/editarLanzadera/} + ${lanzadera.idNave}"><button>Editar</button></a>
-                                        <a th:href="@{/eliminarLanzadera(idNave=${lanzadera.idNave})}"><button>Eliminar</button></a>
+                                        <a th:href="@{/editarTripulada/} + ${tripulada.idNave}"><button>Editar</button></a>
+                                        <a th:href="@{/eliminarTripulada(idNave=${tripulada.idNave})}"><button>Eliminar</button></a>
                                     </td>
                                 </tr>
                             </table>
