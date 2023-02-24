@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <head>
-        <title>Detalles: Naves Sonda</title>
+        <title>Detalles: Nave de Suministros</title>
         <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <link th:href="@{/styles/stylesDetalles.css}" rel="stylesheet" type="text/css"/>
@@ -11,7 +11,7 @@
                 <body>
                     <header th:replace="layout/plantilla :: header"/>
 
-                    <h2>Detalles : Naves Sonda</h2>
+                    <h2>Detalles : Nave De Suministros</h2>
 
                     <section class="main_section">
 
@@ -23,60 +23,60 @@
                                 </tr>
                                 <tr>
                                     <td><label for="id">ID</label></td>
-                                    <td th:text=${sonda.idNave}></td>
+                                    <td th:text=${deSuministros.idNave}></td>
                                 </tr>
                                 <tr>
                                     <td><label for="nombre">Nombre</label></td>
-                                    <td th:text=${sonda.nombre}></td>
+                                    <td th:text=${deSuministros.nombre}></td>
                                 </tr>
                                 <tr>
                                     <td><label for="peso">Peso [ T ]</label></td>
-                                    <td th:text="${sonda.peso}"></td>
+                                    <td th:text="${deSuministros.peso}"></td>
                                 </tr>
                                 <tr>
                                     <td><label for="energetico">Energetico</label></td>
-                                    <td th:text="${sonda.energetico}"></td>
+                                    <td th:text="${deSuministros.energetico}"></td>
                                 </tr>
                                 <tr>
                                     <td><label for="objetivo">Objetivo</label></td>
-                                    <td th:text="${sonda.objetivo}"></td>
+                                    <td th:text="${deSuministros.objetivo}"></td>
                                 </tr>
                                 <tr>
                                     <td><label for="ubicacion">Ubicacion</label></td>
-                                    <td th:text="${sonda.ubicacion}"></td>
+                                    <td th:text="${deSuministros.ubicacion}"></td>
                                 </tr>
                                 <tr>
                                     <td><label for="activo">Activo</label></td>
-                                    <td th:text="${sonda.activo}"></td>
+                                    <td th:text="${deSuministros.activo}"></td>
                                 </tr>
                                 <tr>
                                     <td><label for="averiado">Averiado</label></td>
-                                    <td th:text="${sonda.averiado}"></td>
+                                    <td th:text="${deSuministros.averiado}"></td>
                                 </tr>
                                 <tr>
-                                    <td><label for="destino">Destino</label></td>
-                                    <td th:text="${sonda.destino}"></td>
+                                    <td><label for="altura">Capacidad de Carga</label></td>
+                                    <td th:text="${deSuministros.capacidadCarga}"></td>
                                 </tr>
                                 <tr>
-                                    <td><label for="transmitiendo">Transmitiendo</label></td>
-                                    <td th:text="${sonda.transmitiendo}"></td>
+                                    <td><label for="lanzado">Acoplado</label></td>
+                                    <td th:text="${deSuministros.acoplado}"></p></td>
                                 </tr>
                                 <tr>
                                     <td><p><strong>Metodos de la nave</strong></p></td>
                                     <td>
-                                    <a th:href="@{/repararSonda/} + ${sonda.idNave}"><button>Reparar</button></a>
-                                    <a th:href="@{/activarSonda/} + ${sonda.idNave}"><button>Activar</button></a>
-                                    <a th:href="@{/moverSonda/} + ${sonda.idNave}"><button>Mover</button></a>
-                                    <a th:href="@{/reiniciarSonda/} + ${sonda.idNave}"><button>Reiniciar</button></a>
+                                    <a th:href="@{/repararDeSuministros/} + ${deSuministros.idNave}"><button>Reparar</button></a>
+                                    <a th:href="@{/activarDeSuministros/} + ${deSuministros.idNave}"><button>Activar</button></a>
+                                    <a th:href="@{/moverDeSuministros/} + ${deSuministros.idNave}"><button>Mover</button></a>
+                                    <a th:href="@{/reiniciarDeSuministros/} + ${deSuministros.idNave}"><button>Reiniciar</button></a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <p><strong>Editar o Eliminar Tripulada</strong>
+                                        <p><strong>Editar o Eliminar Lanzadera</strong>
                                     </td>
                                     <td>
-                                        <a th:href="@{/editarSonda/} + ${sonda.idNave}"><button>Editar</button></a>
-                                        <a th:href="@{/eliminarSonda(idNave=${sonda.idNave})}"><button>Eliminar</button></a>
+                                        <a th:href="@{/editarDeSuministros/} + ${deSuministros.idNave}"><button>Editar</button></a>
+                                        <a th:href="@{/eliminarDeSuministros(idNave=${deSuministros.idNave})}"><button>Eliminar</button></a>
                                     </td>
                                 </tr>
                             </table>
@@ -102,4 +102,3 @@
 
                 </body>
                 </html>
-

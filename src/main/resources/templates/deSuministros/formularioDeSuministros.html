@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Formulario : Naves De Suministros</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link th:href="@{/styles/stylesFormulario.css}" rel="stylesheet" type="text/css"/>
+                </head>
+                <body>
+                    <header th:replace="layout/plantilla :: header"/>
+                    <h2>Formulario : Naves De Suministros</h2>
+                    <section>
+
+                        <div class="main_section">
+                            <form th:action="@{/guardarDeSuministros}" method="POST" th:object="${deSuministros}">
+                                <table>
+                                    <tr>
+                                        <th>Descripcion</th>
+                                        <th>Dato a Ingresar</th>
+                                    </tr>
+                                    <input type="hidden" name="idNave" th:field="*{idNave}"/>
+                                    <tr>
+                                        <td>
+                                            <label for="nombre">Nombre</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="nombre" th:field="*{nombre}"/>
+                                            <div th:errors="*{nombre}"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="peso">Peso [ T ]</label>
+                                        </td>
+                                        <td>
+                                            <input type="number" name="peso" th:field="*{peso}"/>
+                                            <div th:errors="*{peso}"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="energetico">Energetico</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="energetico" th:field="*{energetico}"/>
+                                            <div th:errors="*{energetico}"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="objetivo">Objetivo</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="objetivo" th:field="*{objetivo}"/>
+                                            <div th:errors="*{objetivo}"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="ubicacion">Ubicacion</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="ubicacion" th:field="*{ubicacion}"/>
+                                            <div th:errors="*{ubicacion}"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="activo">Activo</label>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" name="activo" th:field="*{activo}"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="averiado">Averiado</label>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" name="averiado" th:field="*{averiado}"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="capacidad_carga">Capacidad de Carga</label>
+                                        </td>
+                                        <td>
+                                            <input type="number" name="capacidad_carga" th:field="*{capacidadCarga}"/>
+                                            <div th:errors="*{capacidadCarga}"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="acoplado">Acoplado</label>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" name="acoplado" th:field="*{acoplado}"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="submit" name="guardarDeSuministros" th:value="Guardar"/>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+
+                    </section>
+                    
+                </body>
+                </html>
