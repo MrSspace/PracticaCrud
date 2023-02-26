@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Resultados Busqueda</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link th:href="@{/styles/stylesNaves.css}" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"/>
+        <h2 th:if="${lanzaderas != null and !lanzaderas.empty}">Naves Lanzadera</h2>
+        <section>
+            <div class="home-container_table" th:if="${lanzaderas != null and !lanzaderas.empty}">
+                <table>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Peso [ T ]</th>
+                        <th>Energetico</th>
+                        <th>Objetivo</th>
+                        <th>Ubicacion</th>
+                        <th>Activo</th>
+                        <th>Averiado</th>
+                        <th>Altura [ m ]</th>
+                        <th>Vehiculo a Lanzar</th>
+                        <th>Lanzado</th>
+                        <th>Visitar</th>
+                    </tr>
+                    <tr th:each="lanzadera : ${lanzaderas}">
+                        <td th:text="${lanzadera.idNave}"></td>
+                        <td th:text="${lanzadera.nombre}"></td>
+                        <td th:text="${lanzadera.peso}"></td>
+                        <td th:text="${lanzadera.energetico}"></td>
+                        <td th:text="${lanzadera.objetivo}"></td>
+                        <td th:text="${lanzadera.ubicacion}"></td>
+                        <td th:text="${lanzadera.activo}"></td>
+                        <td th:text="${lanzadera.averiado}"></td>
+                        <td th:text="${lanzadera.altura}"></td>
+                        <td th:text="${lanzadera.vehiculoALanzar}"></td>
+                        <td th:text="${lanzadera.lanzado}"></td>
+                        <td>
+                            <a th:href="@{/detallesLanzadera/} + ${lanzadera.idNave}"><button>visitar</button></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <h2 th:if="${tripuladas != null and !tripuladas.empty}">Naves Tripuladas</h2>
+        <section>
+            <div class="home-container_table" th:if="${tripuladas != null and !tripuladas.empty}">
+                <table>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Peso [ T ]</th>
+                        <th>Energetico</th>
+                        <th>Objetivo</th>
+                        <th>Ubicacion</th>
+                        <th>Activo</th>
+                        <th>Averiado</th>
+                        <th>Tripulantes [ # ]</th>
+                        <th>Visitar</th>
+                    </tr>
+                    <tr th:each="tripulada : ${tripuladas}">
+                        <td th:text="${tripulada.idNave}"></td>
+                        <td th:text="${tripulada.nombre}"></td>
+                        <td th:text="${tripulada.peso}"></td>
+                        <td th:text="${tripulada.energetico}"></td>
+                        <td th:text="${tripulada.objetivo}"></td>
+                        <td th:text="${tripulada.ubicacion}"></td>
+                        <td th:text="${tripulada.activo}"></td>
+                        <td th:text="${tripulada.averiado}"></td>
+                        <td th:text="${tripulada.tripulantes}"></td>
+                        <td>
+                            <a th:href="@{/detallesTripulada/} + ${tripulada.idNave}"><button>visitar</button></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <h2 th:if="${sondas != null and !sondas.empty}">Naves Sonda</h2>
+        <section>
+            <div class="home-container_table" th:if="${sondas != null and !sondas.empty}">
+                <table>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Peso [ T ]</th>
+                        <th>Energetico</th>
+                        <th>Objetivo</th>
+                        <th>Ubicacion</th>
+                        <th>Activo</th>
+                        <th>Averiado</th>
+                        <th>Destino</th>
+                        <th>Transmitiendo</th>
+                        <th>Visitar</th>
+                    </tr>
+                    <tr th:each="sonda : ${sondas}">
+                        <td th:text="${sonda.idNave}"></td>
+                        <td th:text="${sonda.nombre}"></td>
+                        <td th:text="${sonda.peso}"></td>
+                        <td th:text="${sonda.energetico}"></td>
+                        <td th:text="${sonda.objetivo}"></td>
+                        <td th:text="${sonda.ubicacion}"></td>
+                        <td th:text="${sonda.activo}"></td>
+                        <td th:text="${sonda.averiado}"></td>
+                        <td th:text="${sonda.destino}"></td>
+                        <td th:text="${sonda.transmitiendo}"></td>
+                        <td>
+                            <a th:href="@{/detallesSonda/} + ${sonda.idNave}"><button>visitar</button></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <h2 th:if="${deSuministros != null and !deSuministros.empty}">Naves De Suministros</h2>
+        <section>
+            <div class="home-container_table" th:if="${deSuministros != null and !deSuministros.empty}">
+                <table>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Peso [ T ]</th>
+                        <th>Energetico</th>
+                        <th>Objetivo</th>
+                        <th>Ubicacion</th>
+                        <th>Activo</th>
+                        <th>Averiado</th>
+                        <th>Capacidad de Carga [ Kg ]</th>
+                        <th>Acoplado</th>
+                        <th>Visitar</th>
+                        <th>Modificar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                    <tr th:each="deSuministro : ${deSuministros}">
+                        <td th:text="${deSuministro.idNave}"></td>
+                        <td th:text="${deSuministro.nombre}"></td>
+                        <td th:text="${deSuministro.peso}"></td>
+                        <td th:text="${deSuministro.energetico}"></td>
+                        <td th:text="${deSuministro.objetivo}"></td>
+                        <td th:text="${deSuministro.ubicacion}"></td>
+                        <td th:text="${deSuministro.activo}"></td>
+                        <td th:text="${deSuministro.averiado}"></td>
+                        <td th:text="${deSuministro.capacidadCarga}"></td>
+                        <td th:text="${deSuministro.acoplado}"></td>
+                        <td>
+                            <a th:href="@{/detallesDeSuministros/} + ${deSuministro.idNave}"><button>visitar</button></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <header th:replace="layout/plantilla :: footer"/>
+    </body>
+</html>

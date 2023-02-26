@@ -11,4 +11,26 @@ public class Decisiones {
         return decision;
     }
     
+    public static boolean esEntero(String cadena) {
+        boolean verificado;
+        try {
+            Integer.parseInt(cadena);
+            verificado = true;
+        } catch (NumberFormatException excepcion) {
+            verificado = false;
+        }
+        return verificado;
+    }
+    
+    public static boolean esDouble(String cadena) {
+        boolean verificado;
+        try {
+            Double.parseDouble(cadena);
+            verificado = true;
+        } catch (NumberFormatException excepcion) {
+            verificado = false;
+        }
+        return verificado;
+    }
+    
 }

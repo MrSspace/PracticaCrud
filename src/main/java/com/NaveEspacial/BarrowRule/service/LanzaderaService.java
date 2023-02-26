@@ -38,4 +38,54 @@ public class LanzaderaService implements ILanzaderaService{
         return lanzaderaDAO.findById(lanzadera.getIdNave()).orElse(null);
     }
     
+    @Override
+    @Transactional
+    public List<Lanzadera> listarLanzaderasPorNombre(String nombre){
+        System.out.println("Buscando Lanzaderas por nombre = " + nombre);
+        List<Lanzadera> lista = (List<Lanzadera>) lanzaderaDAO.findAllLanzaderasByNombre(nombre);
+        return lista;
+    }
+
+    @Override
+    public List<Lanzadera> listarLanzaderasPorPeso(double peso) {
+        System.out.println("Buscando Lanzaderas por peso = " + peso);
+        List<Lanzadera> lista = (List<Lanzadera>) lanzaderaDAO.findAllLanzaderasByPeso(peso);
+        return lista;
+    }
+
+    @Override
+    public List<Lanzadera> listarLanzaderasPorEnergetico(String energetico) {
+        System.out.println("Buscando Lanzaderas por energetico = " + energetico);
+        List<Lanzadera> lista = (List<Lanzadera>) lanzaderaDAO.findAllLanzaderasByEnergetico(energetico);
+        return lista;
+    }
+
+    @Override
+    public List<Lanzadera> listarLanzaderasPorObjetivo(String objetivo) {
+        System.out.println("Buscando Lanzaderas por objetivo = " + objetivo);
+        List<Lanzadera> lista = (List<Lanzadera>) lanzaderaDAO.findAllLanzaderasByObjetivo(objetivo);
+        return lista;
+    }
+
+    @Override
+    public List<Lanzadera> listarLanzaderasPorUbicacion(String ubicacion) {
+        System.out.println("Buscando Lanzaderas por ubicacion = " + ubicacion);
+        List<Lanzadera> lista = (List<Lanzadera>) lanzaderaDAO.findAllLanzaderasByUbicacion(ubicacion);
+        return lista;
+    }
+
+    @Override
+    public List<Lanzadera> listarLanzaderasPorAltura(double altura) {
+        System.out.println("Buscando Lanzaderas por altura = " + altura);
+        List<Lanzadera> lista = (List<Lanzadera>) lanzaderaDAO.findAllLanzaderasByAltura(altura);
+        return lista;
+    }
+
+    @Override
+    public List<Lanzadera> listarLanzaderasPorVehiculoALanzar(String vehiculoALanzar) {
+        System.out.println("Buscando Lanzaderas por vehiculoALanzar = " + vehiculoALanzar);
+        List<Lanzadera> lista = (List<Lanzadera>) lanzaderaDAO.findAllLanzaderasByVehiculoALanzar(vehiculoALanzar);
+        return lista;
+    }
+    
 }

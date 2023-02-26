@@ -17,7 +17,7 @@
             </div>
             <div>
                 <form th:action="@{/buscar}" method="POST" th:object="${buscado}">
-                    <input type="text" name="buscador"/>
+                    <input type="search" name="variable" />
                     <input type="submit" name="buscar" th:value="Buscar"/>
                 </form>
             </div>
