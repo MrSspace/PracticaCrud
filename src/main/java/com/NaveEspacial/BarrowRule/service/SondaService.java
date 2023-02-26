@@ -37,5 +37,41 @@ public class SondaService implements ISondaService{
     public Sonda encontrarSonda(Sonda sonda) {
         return sondaDAO.findById(sonda.getIdNave()).orElse(null);
     }
+
+    @Override
+    public List<Sonda> listarSondasPorNombre(String nombre) {
+        System.out.println("Buscando Sondas por nombre = " + nombre);
+        return sondaDAO.findAllSondasByNombre(nombre);
+    }
+
+    @Override
+    public List<Sonda> listarSondasPorPeso(double peso) {
+        System.out.println("Buscando Sondas por peso = " + peso);
+        return sondaDAO.findAllSondasByPeso(peso);
+    }
+
+    @Override
+    public List<Sonda> listarSondasPorEnergetico(String energetico) {
+        System.out.println("Buscando Sondas por energetico = " + energetico);
+        return sondaDAO.findAllSondasByEnergetico(energetico);
+    }
+
+    @Override
+    public List<Sonda> listarSondasPorObjetivo(String objetivo) {
+        System.out.println("Buscando Sondas por objetivo = " + objetivo);
+        return sondaDAO.findAllSondasByObjetivo(objetivo);
+    }
+
+    @Override
+    public List<Sonda> listarSondasPorUbicacion(String ubicacion) {
+        System.out.println("Buscando Sondas por ubicacion = " + ubicacion);
+        return sondaDAO.findAllSondasByUbicacion(ubicacion);
+    }
+
+    @Override
+    public List<Sonda> listarSondasPorDestino(String destino) {
+        System.out.println("Buscando Sondas por destino = " + destino);
+        return sondaDAO.findAllSondasByDestino(destino);
+    }
     
 }
