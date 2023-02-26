@@ -35,7 +35,7 @@
                                             <label for="peso">Peso [ T ]</label>
                                         </td>
                                         <td>
-                                            <input type="number" name="peso" th:field="*{peso}"/>
+                                            <input type="number" name="peso" min="0" step="0.01" th:field="*{peso}"/>
                                             <div th:errors="*{peso}"></div>
                                         </td>
                                     </tr>
@@ -87,7 +87,7 @@
                                             <label for="altura">Tripulantes [ # ]</label>
                                         </td>
                                         <td>
-                                            <input type="number" name="tripulantes" th:field="*{tripulantes}"/>
+                                            <input type="number" name="tripulantes" min="0" th:field="*{tripulantes}"/>
                                             <div th:errors="*{tripulantes}"></div>
                                         </td>
                                     </tr>
@@ -102,6 +102,6 @@
                         </div>
 
                     </section>
-                    
+                    <header th:replace="layout/plantilla :: footer"/>
                 </body>
                 </html>

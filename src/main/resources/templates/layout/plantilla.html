@@ -10,9 +10,18 @@
     <body>
         
         <header th:fragment="header">
-            <a th:href="@{/}"> | Inicio | </a>  <a th:href="@{/lanzadera}"> | Lanzaderas | </a>  
-            <a th:href="@{/tripulada}"> | Tripuladas | </a>  <a th:href="@{/sonda}"> | Sonda | </a>  
-            <a th:href="@{/deSuministros}"> | De Suministros | </a>
+            <div>
+                <a th:href="@{/}"> | Inicio | </a>  <a th:href="@{/lanzadera}"> | Lanzaderas | </a>  
+                <a th:href="@{/tripulada}"> | Tripuladas | </a>  <a th:href="@{/sonda}"> | Sonda | </a>  
+                <a th:href="@{/deSuministros}"> | De Suministros | </a>
+            </div>
+            <div>
+                <form th:action="@{/buscar}" method="POST" th:object="${buscado}">
+                    <input type="text" name="buscador"/>
+                    <input type="submit" name="buscar" th:value="Buscar"/>
+                </form>
+            </div>
+            <div></div>
         </header>
         
         <footer th:fragment="footer">

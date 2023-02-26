@@ -35,7 +35,7 @@
                                             <label for="peso">Peso [ T ]</label>
                                         </td>
                                         <td>
-                                            <input type="number" name="peso" th:field="*{peso}"/>
+                                            <input type="number" name="peso" min="0" step="0.01" th:field="*{peso}"/>
                                             <div th:errors="*{peso}"></div>
                                         </td>
                                     </tr>
@@ -110,7 +110,7 @@
                         </div>
 
                     </section>
-                    
+                    <header th:replace="layout/plantilla :: footer"/>
                 </body>
                 </html>
 
