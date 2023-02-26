@@ -32,5 +32,41 @@ public class DeSuministrosService implements IDeSuministrosService{
     public DeSuministros encontrarDeSuministros(DeSuministros deSuministros) {
         return deSuministrosDAO.findById(deSuministros.getIdNave()).orElse(null);
     }
+
+    @Override
+    public List<DeSuministros> listarDeSuministrosPorNombre(String nombre) {
+        System.out.println("Buscando De Suministros por nombre = " + nombre);
+        return deSuministrosDAO.findAllDeSuministrosByNombre(nombre);
+    }
+
+    @Override
+    public List<DeSuministros> listarDeSuministrosPorPeso(double peso) {
+        System.out.println("Buscando De Suministros por peso = " + peso);
+        return deSuministrosDAO.findAllDeSuministrosByPeso(peso);
+    }
+
+    @Override
+    public List<DeSuministros> listarDeSuministrosPorEnergetico(String energetico) {
+        System.out.println("Buscando De Suministros por energetico = " + energetico);
+        return deSuministrosDAO.findAllDeSuministrosByEnergetico(energetico);
+    }
+
+    @Override
+    public List<DeSuministros> listarDeSuministrosPorObjetivo(String objetivo) {
+        System.out.println("Buscando De Suministros por objetivo = " + objetivo);
+        return deSuministrosDAO.findAllDeSuministrosByObjetivo(objetivo);
+    }
+
+    @Override
+    public List<DeSuministros> listarDeSuministrosPorUbicacion(String ubicacion) {
+        System.out.println("Buscando De Suministros por ubicacion = " + ubicacion);
+        return deSuministrosDAO.findAllDeSuministrosByUbicacion(ubicacion);
+    }
+
+    @Override
+    public List<DeSuministros> listarDeSuministrosPorCapacidadDeCarga(double capacidadCarga) {
+        System.out.println("Buscando De Suministros por capacidad de carga = " + capacidadCarga);
+        return deSuministrosDAO.findAllDeSuministrosByCapacidadCarga(capacidadCarga);
+    }
     
 }

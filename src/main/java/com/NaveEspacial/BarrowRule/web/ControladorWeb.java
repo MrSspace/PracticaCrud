@@ -1,6 +1,7 @@
 package com.NaveEspacial.BarrowRule.web;
 
 import com.NaveEspacial.BarrowRule.dominio.Buscado;
+import com.NaveEspacial.BarrowRule.dominio.DeSuministros;
 import com.NaveEspacial.BarrowRule.dominio.Lanzadera;
 import com.NaveEspacial.BarrowRule.dominio.Sonda;
 import com.NaveEspacial.BarrowRule.dominio.Tripulada;
@@ -41,6 +42,7 @@ public class ControladorWeb {
         List<Lanzadera> lanzaderas = null;
         List<Tripulada> tripuladas = null;
         List<Sonda> sondas = null;
+        List<DeSuministros> deSuministros = null;
         
         if ( esDouble( buscado.getVariable() ) ) {
             lanzaderas = lanzaderaService.listarLanzaderasPorPeso( Double.parseDouble( buscado.getVariable()) );
@@ -50,6 +52,9 @@ public class ControladorWeb {
             tripuladas.addAll( tripuladaService.listarTripuladasPorTripulantes( Integer.parseInt( buscado.getVariable() ) ) );
             
             sondas = sondaService.listarSondasPorPeso( Double.parseDouble( buscado.getVariable() ) );
+            
+            deSuministros = deSuministrosService.listarDeSuministrosPorPeso( Double.parseDouble( buscado.getVariable() ) );
+            deSuministros.addAll( deSuministrosService.listarDeSuministrosPorCapacidadDeCarga( Double.parseDouble( buscado.getVariable() ) ) );
             
         } else {
          lanzaderas = lanzaderaService.listarLanzaderasPorNombre(buscado.getVariable());
@@ -68,13 +73,19 @@ public class ControladorWeb {
          sondas.addAll( sondaService.listarSondasPorObjetivo(buscado.getVariable()) );
          sondas.addAll( sondaService.listarSondasPorUbicacion(buscado.getVariable()) );
          sondas.addAll( sondaService.listarSondasPorDestino(buscado.getVariable()) );
+         
+         deSuministros = deSuministrosService.listarDeSuministrosPorNombre(buscado.getVariable());
+         deSuministros.addAll( deSuministrosService.listarDeSuministrosPorEnergetico(buscado.getVariable()) );
+         deSuministros.addAll( deSuministrosService.listarDeSuministrosPorObjetivo(buscado.getVariable()) );
+         deSuministros.addAll( deSuministrosService.listarDeSuministrosPorUbicacion(buscado.getVariable()) );
         }
         
         model.addAttribute("lanzaderas", lanzaderas);
         model.addAttribute("tripuladas", tripuladas);
         model.addAttribute("sondas", sondas);
+        model.addAttribute("deSuministros", deSuministros);
         
-        if (lanzaderas.isEmpty() && tripuladas.isEmpty() && sondas.isEmpty()) {
+        if ( lanzaderas.isEmpty() && tripuladas.isEmpty() && sondas.isEmpty() && deSuministros.isEmpty() ) {
             return "/busquedaSinResultado";
         } else {
             return "/resultadoBusqueda";
